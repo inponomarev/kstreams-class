@@ -5,4 +5,5 @@ public class TopicNames {
     public static final String EVENT_SCORE_TOPIC = "eventscore";
     public static final String GAIN_TOPIC = "gain";
     public static final String FRAUD_TOPIC = "fraud";
+    public static final String COMMAND_BET_TOPIC = "commandbet";
 }

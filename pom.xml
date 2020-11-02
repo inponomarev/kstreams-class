@@ -18,6 +18,7 @@
         <module>counting</module>
         <module>tables</module>
         <module>windows</module>
+        <module>hw-streams</module>
     </modules>
 
     <organization>
