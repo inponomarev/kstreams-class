@@ -1,6 +1,6 @@
 # Kafka Streams Class
 
-[![Build Status](https://travis-ci.org/inponomarev/kstreams-class.svg?branch=master)](https://travis-ci.org/inponomarev/kstreams-class)
+[![Actions Status: build](https://github.com/inponomarev/kstreams-class/workflows/build/badge.svg)](https://github.com/inponomarev/kstreams-class/actions?query=workflow%3A"build")
 
 Заготовка для самостоятельных работ по тренингу Kafka Streams API
 
