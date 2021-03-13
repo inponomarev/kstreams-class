@@ -18,6 +18,7 @@
         <module>counting</module>
         <module>tables</module>
         <module>windows</module>
+        <module>homework</module>
     </modules>
 
     <organization>
@@ -30,4 +31,5 @@
             <email>ponomarev@corchestra.ru</email>
         </developer>
     </developers>
+
 </project>

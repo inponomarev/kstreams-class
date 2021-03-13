@@ -22,3 +22,5 @@ slides/src/main/asciidoc/*.png
 /old/
 /*.mp4
 /*.bat
+/homework/src/main/java/ru/curs/homework/configuration/TopologyConfiguration.java.backup
+/homework/src/main/java/ru/curs/homework/configuration/WinningBetTransformer.java.backup
