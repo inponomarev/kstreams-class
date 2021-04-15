@@ -56,7 +56,7 @@ public class Producer implements CommandLineRunner {
     public void run(String... args) {
         ExecutorService executorService = Executors.newFixedThreadPool(2);
         executorService.submit(this::writeBets);
-        executorService.submit(this::writeScores);
+        writeScores();
     }
 
 }

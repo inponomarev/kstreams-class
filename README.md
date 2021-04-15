@@ -38,7 +38,7 @@ docker exec -it kafkacat /bin/bash
 и выполните команду
 
 ```
-kafkacat -L -b broker:9092
+kafkacat -L -b broker:29092
 ```
 
 Если вы увидели текст типа "Metadata for all topics... broker1 at localhost:9092", значит c запуском Kafka и kafkacat на вашей машине всё в порядке!
