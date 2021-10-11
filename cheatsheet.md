@@ -44,7 +44,7 @@ kafkacat -C -b broker:29092 -G <group name> <topic name>
 * Чтение данных из топика с форматированием вывода 
 
 ```
-kafkacat -C -b broker:29092 -t <topic name> -f '%k;%p;%s\n'
+kafkacat -q -C -b broker:29092 -t <topic name> -f '%k;%p;%s\n'
 ```
 
  * `%k` — ключ
