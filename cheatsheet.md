@@ -1,12 +1,12 @@
-## Cheat Sheet
+## Command Line Cheat Sheet
 
-* Список контейнеров
+* List of running containers
 
 ```
 docker ps -a
 ```
 
-* Очистка остановленных контейнеров и вольюмов (рекомендую перед началом второго занятия)
+* Cleaning stopped containers and volumes (recommended before starting the second lesson)
 
 
 ```
@@ -14,42 +14,42 @@ docker container prune
 docker volume prune
 ```
 
-* Запуск учебного Кафка-кластера (из папки с проектом)
+* Launching a mini Kafka cluster (from the project root folder)
 
 ```
 docker-compose up
 ```
 
-* Вход в контейнер с установленным kafkacat
+* Log in to a container with kcat installed
 
 
 ```
 docker exec -it kafkacat /bin/bash
 ```
 
-## Kafkacat cheat sheet
+## kcat cheat sheet
 
-* Перечень топиков
-
-```
-kafkacat -L -b broker:29092
-```
-
-* Чтение данных из топика в консьюмер-группе
+* Topics list
 
 ```
-kafkacat -C -b broker:29092 -G <group name> <topic name>
+kcat -L -b broker:29092
 ```
 
-* Чтение данных из топика с форматированием вывода 
+* Reading data from topic in a consumer group
 
 ```
-kafkacat -q -C -b broker:29092 -t <topic name> -f '%k;%p;%s\n'
+kcat -C -b broker:29092 -G <group name> <topic name>
 ```
 
- * `%k` — ключ
- * `%p` — номер партиции
- * `%s` — значение (десериализованное в строку)
- * `%S` — длина сообщения в байтах
+* Reading data from topic with output formatting 
 
-Не забывайте в конце ставить `\n`, иначе все данные сольются в одну строку!
+```
+kcat -q -C -b broker:29092 -t <topic name> -f '%k;%p;%s\n'
+```
+
+ * `%k` — key
+ * `%p` — partition number
+ * `%s` — value (deserialized as a string)
+ * `%S` — message length in bytes
+
+Do not forget `\n`, otherwise everything will be dumped into one line!

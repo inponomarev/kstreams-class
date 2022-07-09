@@ -2,67 +2,53 @@
 
 [![Actions Status: build](https://github.com/inponomarev/kstreams-class/workflows/build/badge.svg)](https://github.com/inponomarev/kstreams-class/actions?query=workflow%3A"build")
 
-Заготовка для самостоятельных работ по тренингу Kafka Streams API
+Preparation for Kafka Streams API hands-on practice lab
 
-* [План занятий](plan.md)
+* [Lessons plan](plan.md)
 
-* [Краткое руководство по Zoom](zoom.md)
+* [Command Line cheat sheet](cheatsheet.md)
 
-* [Cheat Sheet по командной строке](cheatsheet.md)
+* [Home assignment](homework.md)
 
-* [Домашняя работа](homework.md)
+## Instructions for preparing for the lesson
 
-## Инструкция по подготовке к занятию
+In order not to waste precious time during the training on downloading hundreds of megabytes from the Internet and solving technical problems, please carefully read and fully follow this instruction _before the training starts_.
 
-Для того, чтобы не терять драгоценного времени во время тренинга на скачивание многих сотен мегабайтов из интернета и решение технических проблем, прошу внимательно прочитать и полностью выполнить данную инструкцию _до начала тренинга_.
+Your machine should have:
+* Webcam and microphone (participation in the training takes place with the webcam turned on and will require periodic screen sharing!) 
+* Docker,
+* Java 8/11,
+* Maven,
+* IntelliJ IDEA (with Lombok plugin).
 
-На вашей машине должны быть установлены: 
-  * Вебкамера и микрофон (участие в тренинге происходит при включенной веб-камере и потребует периодического расшаривания экрана!)
-  * Docker, 
-  * Java 8, 
-  * Maven, 
-  * IntelliJ IDEA (c Lombok-плагином). 
-  
-Допустимо использование более свежей версии Java и другой (более привычной вам) IDE, но без гарантии, что я смогу помочь в случае возникновения проблем. 
+You may use a more recent version of Java or other IDE (more familiar to you), but with no guarantee that I can help in case of problems. 
 
-1. Склонируйте проект https://github.com/inponomarev/kstreams-class себе на локальный диск
+1. Clone the project https://github.com/inponomarev/kstreams-class to your local drive
 
-2. В корне проекта выполните `docker-compose up`. Эта команда скачает необходимые Docker-образы и запустит мини-кластер Kafka у вас на машине.
+2. Run `docker-compose up` at the root of the project. This command will download the necessary Docker images and start a mini Kafka cluster on your machine.
 
-3. Проверьте работоспособность Kafka и kafkacat. Для этого залогиньтесь в docker контейнер 
+3. Check the health of Kafka and kcat. To do this, log into the docker container
 
 ```
 docker exec -it kafkacat /bin/bash
 ```
 
-и выполните команду
+and run the command
 
 ```
-kafkacat -L -b broker:29092
+kcat -L -b broker:29092
 ```
 
-Если вы увидели текст типа "Metadata for all topics... broker1 at localhost:9092", значит c запуском Kafka и kafkacat на вашей машине всё в порядке!
+If you see text like "Metadata for all topics... broker1 at localhost:9092", then everything is fine with Kafka and kcat running on your machine!
 
-4. Скачайте программу Conduktor. https://www.conduktor.io/ Для запуска потребуется авторизация через Github/Google.
+4. Run `mvn clean install` at the root of the project. This command will download and cache the required libraries. The build should succeed!
 
-5. Запустите Conduktor, настройте cluster configuration на localhost:9092, как на скриншоте. Проверьте соединение.
+5. Open the project in IntelliJ IDEA. If necessary, install the Lombok plugin (Shift-Shift, Plugins, find and install the Lombok plugin). Once the import and indexing is complete, there should be no "red underlined" code.
 
-<img align="center" src="conduktor1.png" width="400px">
-
-
-6. Войдите в кластер, должна появиться примерно следующая картинка!
-
-<img align="center" src="conduktor2.png" width="400px" alt="conduktor screenshot"> 
-
-
-7. Выполните в корне проекта `mvn clean install`. Эта команда скачает и закеширует необходимые библиотеки. Сборка должна пройти успешно!
-
-8. Откройте проект в IntelliJ IDEA. При необходимости, установите плагин Lombok (Shift-Shift, Plugins, найдите и установите плагин Lombok). После завершения импорта и индексирования, не должно быть "подчёркнутого красным" кода.
-
-9. Убедитесь, что можете запустить модуль Producer (как на скриншоте) и он начинает продуцировать данные в вашу локально развёрнутую Кафку (внизу бежит лог как на скриншоте):
+6. Make sure you can run the Producer module (as in the screenshot) and it starts producing data into your locally deployed Kafka (below, the log runs as in the screenshot):
 
 <img align="left" src="producer.png" width="400px" alt="producer screenshot"> 
 
 
-Поздравляю, теперь вы полностью готовы к тренингу!
+Congratulations, you are now fully prepared for the training!
 
